@@ -1,3 +1,36 @@
+# 23.03.1 (2023-04-0x) <!-- FIXME -->
+
+23.03.1 is a patch release. This release contains a fix for a regression in the 23.03 release which could cause some language server features to fail when working on files which need their paths normalized ([#6517](https://github.com/helix-editor/helix/pull/6517)). This could happen when working with files in case-insensitive file-systems which are common in Windows and macOS installations.
+
+There are a handful of other fixes and improvements included in this release as well.
+
+Fixes:
+
+- Robustly handle invalid LSP ranges ([#6512](https://github.com/helix-editor/helix/pull/6512))
+- Fix line number display for LSP goto pickers ([#6559](https://github.com/helix-editor/helix/pull/6559))
+
+Themes:
+
+- Style inlay hints in `dracula` theme ([#6515](https://github.com/helix-editor/helix/pull/6515))
+- Style inlay hints in `onedark` theme ([#6503](https://github.com/helix-editor/helix/pull/6503))
+- Style inlay hints and the soft-wrap indicator in `varua` ([#6568](https://github.com/helix-editor/helix/pull/6568), [#6589](https://github.com/helix-editor/helix/pull/6589))
+- Style inlay hints in `emacs` theme ([#6569](https://github.com/helix-editor/helix/pull/6569))
+- Update `base16_transparent` and `dark_high_contrast` themes ([#6577](https://github.com/helix-editor/helix/pull/6577))
+- Style inlay hints for `mellow` and `rasmus` themes ([#6583](https://github.com/helix-editor/helix/pull/6583))
+- Dim pane divider for `base16_transparent` theme ([#6534](https://github.com/helix-editor/helix/pull/6534))
+- Style inlay hints in `zenburn` theme ([#6593](https://github.com/helix-editor/helix/pull/6593))
+
+Language support:
+
+- R language server: use the `--no-echo` flag to silence output ([#6570](https://github.com/helix-editor/helix/pull/6570))
+- Recognize CUDA files as C++ ([#6521](https://github.com/helix-editor/helix/pull/6521))
+
+Packaging:
+
+- Update the Nix flake dependencies, remove a deprecated option ([#6546](https://github.com/helix-editor/helix/pull/6546))
+- Fix and re-enable aarch64-macos release binary builds ([#6504](https://github.com/helix-editor/helix/pull/6504))
+- The git dependency on `tree-sitter` has been replaced with a regular crates.io dependency ([#6608](https://github.com/helix-editor/helix/pull/6608))
+
 # 23.03 (2023-03-31)
 
 23.03 brings some long-awaited and exciting features. Thank you to everyone involved! This release saw changes from 102 contributors.
