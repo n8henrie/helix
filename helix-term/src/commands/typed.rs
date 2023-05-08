@@ -101,9 +101,9 @@ fn force_quit(
 }
 
 fn open(cx: &mut compositor::Context, args: &[Cow<str>], event: PromptEvent) -> anyhow::Result<()> {
-    dbg!(args);
+    log::debug!("args: {args:?}");
     if event != PromptEvent::Validate {
-        dbg!("not validate");
+        log::debug!("not validate");
         return Ok(());
     }
 
