@@ -1,3 +1,4 @@
+#![warn(clippy::pedantic)]
 use std::fmt::Write;
 use std::ops::Deref;
 
@@ -113,7 +114,8 @@ fn open(cx: &mut compositor::Context, args: &[Cow<str>], event: PromptEvent) -> 
         let path = helix_core::path::expand_tilde(&path);
         // If the path is a directory, open a file picker on that directory and update the status
         // message
-        if let Ok(true) = std::fs::canonicalize(&path).map(|p| p.is_dir()) {
+        // if let Ok(true) = std::fs::canonicalize(&path).map(|p| p.is_dir()) {
+        if false {
             let callback = async move {
                 let call: job::Callback = job::Callback::EditorCompositor(Box::new(
                     move |editor: &mut Editor, compositor: &mut Compositor| {
