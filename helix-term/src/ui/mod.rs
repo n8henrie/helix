@@ -210,7 +210,7 @@ pub fn file_picker(root: PathBuf, config: &helix_view::editor::Config) -> FilePi
         files.collect()
     } else {
         // const MAX: usize = 8192;
-        const MAX: usize = 100_000;
+        const MAX: usize = 0;
         files.take(MAX).collect()
     };
     files.sort();
